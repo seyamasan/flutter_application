@@ -1,0 +1,11 @@
+{
+    "@@locale": "ja",
+    "home_title": "ホーム",
+    "@home_title": {
+        "description": "ホーム画面のタイトル"
+    },
+    "counter_title": "カウンターView",
+    "@counter_title": {
+        "description": "カウンター画面のタイトル"
+    }
+}

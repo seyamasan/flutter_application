@@ -1,0 +1,11 @@
+{
+    "@@locale": "en",
+    "home_title": "Home",
+    "@home_title": {
+        "description": "Home Screen Title"
+    },
+    "counter_title": "CounterView",
+    "@counter_title": {
+        "description": "Counter View Title"
+    }
+}

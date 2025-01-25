@@ -13,6 +13,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_application/main.dart';
 
+// ウィジェットテスト未完成
+
 void main() {
   // MyAppのAddとRemoveボタンの挙動
   testWidgets('Test counter functionality (increment and decrement)', (WidgetTester tester) async {

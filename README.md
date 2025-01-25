@@ -1,4 +1,13 @@
 Flutter study repository.
 
-# Library
+# Package
+
+## State management
 - flutter_riverpod
+
+## Screen transition
+- go_router
+
+## Localization
+- intl
+- flutter_localization

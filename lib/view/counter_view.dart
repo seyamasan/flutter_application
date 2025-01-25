@@ -4,61 +4,21 @@ import 'package:flutter_application/quantity_picker_provider.dart';
 import 'package:flutter_application/provider/go_router_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// 一番最初に走るmain関数
-void main() {
-  runApp(const ProviderScope( // これでProviderScope使える。flutter_riverpod
-    child: MyApp(),
-  ));
-}
+class CounterView extends ConsumerWidget {
+  const CounterView({super.key});
 
-class MyApp extends ConsumerWidget {
-  const MyApp({super.key});
-
-  // アプリのルート
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final goRouter = ref.watch(goRouterProvider);
-
-    return MaterialApp.router(
-      title: 'Flutter Application',
-      localizationsDelegates: L10n.localizationsDelegates,
-      supportedLocales: L10n.supportedLocales,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true
-      ),
-      routerConfig: goRouter // GoRouterを設定
-    );
-  }
-}
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Flutter デモ',
-//       theme: ThemeData(
-//         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-//         useMaterial3: true,
-//       ),
-//       home: const MyHomePage(title: 'Flutter デモ ホームページ'),
-//     );
-//   }
-// }
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
+    final goRouter = ref.read(goRouterProvider); 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(title),
+        title: Text(L10n.of(context)!.counter_title),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            goRouter.pop(); // 戻るボタンの処理
+          },
+        )
       ),
       body: Center(
         child: Column(
@@ -122,7 +82,7 @@ class MyHomePage extends StatelessWidget {
             )
           ]
         )
-      )
+      ),
     );
   }
 }
