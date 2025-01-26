@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/l10n/app_localizations.dart';
-import 'package:flutter_application/quantity_picker_provider.dart';
+import 'package:flutter_application/provider/quantity_picker_provider.dart';
 import 'package:flutter_application/provider/go_router_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -14,7 +14,7 @@ class CounterView extends ConsumerWidget {
       appBar: AppBar(
         title: Text(L10n.of(context)!.counter_title),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back_ios),
           onPressed: () {
             goRouter.pop(); // 戻るボタンの処理
           },
@@ -24,9 +24,7 @@ class CounterView extends ConsumerWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'ボタンをタップした回数:',
-            ),
+            Text(L10n.of(context)!.counter_view_tap_count),
             // Riverpodの状態を監視する
             Consumer(
               builder: (context, ref, child) {
@@ -82,7 +80,7 @@ class CounterView extends ConsumerWidget {
             )
           ]
         )
-      ),
+      )
     );
   }
 }

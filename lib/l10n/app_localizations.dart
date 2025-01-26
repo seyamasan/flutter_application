@@ -95,17 +95,29 @@ abstract class L10n {
     Locale('ja')
   ];
 
-  /// ホーム画面のタイトル
+  /// Basic画面のタイトル
   ///
   /// In ja, this message translates to:
-  /// **'ホーム'**
-  String get home_title;
+  /// **'基本的なView'**
+  String get basic_title;
+
+  /// カスタム画面のタイトル
+  ///
+  /// In ja, this message translates to:
+  /// **'カスタムView'**
+  String get custom_title;
 
   /// カウンター画面のタイトル
   ///
   /// In ja, this message translates to:
   /// **'カウンターView'**
   String get counter_title;
+
+  /// カウンター画面のタップした回数
+  ///
+  /// In ja, this message translates to:
+  /// **'ボタンをタップした回数:'**
+  String get counter_view_tap_count;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

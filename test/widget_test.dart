@@ -7,7 +7,7 @@
 // ツリーの子ウィジェットを探したり、テキストを読み込んだり、ウィジェットのプロパティの値が正しいかどうかを検証したりすることもできます。
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application/quantity_picker_provider.dart';
+import 'package:flutter_application/provider/quantity_picker_provider.dart';
 import 'package:flutter_application/quantity_picker_state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';

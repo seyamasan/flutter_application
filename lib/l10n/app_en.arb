@@ -1,11 +1,19 @@
 {
     "@@locale": "en",
-    "home_title": "Home",
-    "@home_title": {
-        "description": "Home Screen Title"
+    "basic_title": "基本的なView",
+    "@basic_title": {
+        "description": "Basic画面のタイトル"
+    },
+    "custom_title": "カスタムView",
+    "@custom_title": {
+        "description": "カスタム画面のタイトル"
     },
     "counter_title": "CounterView",
     "@counter_title": {
         "description": "Counter View Title"
+    },
+    "counter_view_tap_count": "Number of times the button was tapped:",
+    "@counter_view_tap_count": {
+        "description": "The number of times the button was tapped on the counter screen"
     }
 }
