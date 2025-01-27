@@ -10,6 +10,9 @@ class CounterView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final goRouter = ref.read(goRouterProvider); 
+    final quantity = ref.watch(quantityPickerProvider);
+    final notifier = ref.watch(quantityPickerProvider.notifier);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(L10n.of(context)!.counter_title),
@@ -25,56 +28,40 @@ class CounterView extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(L10n.of(context)!.counter_view_tap_count),
-            // Riverpodの状態を監視する
-            Consumer(
-              builder: (context, ref, child) {
-                final quantity = ref.watch(quantityPickerProvider);
-                return Text(
-                  '$quantity',
-                  style: Theme.of(context).textTheme.headlineMedium,
-                );
-              },
+            Text(
+              '$quantity',
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(height: 16), // スペース
             Row(
               mainAxisAlignment: MainAxisAlignment.center, // 横方向に中央揃え
               children: [
                 // マイナスボタン
-                Consumer(
-                  builder: (context, ref, child) {
-                    final notifier = ref.read(quantityPickerProvider.notifier);
-                    return OutlinedButton(
-                      onPressed: () {
-                        notifier.decrease(); // 減少
-                      },
-                      style: OutlinedButton.styleFrom(
-                        shape: const CircleBorder(),
-                        side: const BorderSide(color: Colors.red, width: 2),
-                        padding: const EdgeInsets.all(16),
-                        backgroundColor: Colors.red.withOpacity(0.3),
-                      ),
-                      child: const Icon(Icons.remove, color: Colors.white),
-                    );
+                OutlinedButton(
+                  onPressed: () {
+                    notifier.decrease(); // 減少
                   },
+                  style: OutlinedButton.styleFrom(
+                    shape: const CircleBorder(),
+                    side: const BorderSide(color: Colors.red, width: 2),
+                    padding: const EdgeInsets.all(16),
+                    backgroundColor: Colors.red.withOpacity(0.3),
+                  ),
+                  child: const Icon(Icons.remove, color: Colors.white),
                 ),
                 const SizedBox(width: 16), // ボタン間のスペース
                 // プラスボタン
-                Consumer(
-                  builder: (context, ref, child) {
-                    final notifier = ref.read(quantityPickerProvider.notifier);
-                    return OutlinedButton(
-                      onPressed: () {
-                        notifier.increase(); // 増加
-                      },
-                      style: OutlinedButton.styleFrom(
-                        shape: const CircleBorder(),
-                        side: const BorderSide(color: Colors.green, width: 2),
-                        padding: const EdgeInsets.all(16),
-                        backgroundColor: Colors.green.withOpacity(0.3),
-                      ),
-                      child: const Icon(Icons.add, color: Colors.white),
-                    );
-                  }
+                OutlinedButton(
+                  onPressed: () {
+                    notifier.increase(); // 増加
+                  },
+                  style: OutlinedButton.styleFrom(
+                    shape: const CircleBorder(),
+                    side: const BorderSide(color: Colors.green, width: 2),
+                    padding: const EdgeInsets.all(16),
+                    backgroundColor: Colors.green.withOpacity(0.3),
+                  ),
+                  child: const Icon(Icons.add, color: Colors.white),
                 )
               ]
             )
