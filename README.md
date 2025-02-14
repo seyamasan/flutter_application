@@ -11,3 +11,6 @@ Flutter study repository.
 ## Localization
 - intl
 - flutter_localization
+
+## Others
+- liquid_swipe

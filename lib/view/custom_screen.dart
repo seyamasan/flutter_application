@@ -11,14 +11,15 @@ class Screen {
   Screen({required this.name, required this.path});
 }
 
-class CustomView extends ConsumerWidget {
-  const CustomView({super.key});
+class CustomScreen extends ConsumerWidget {
+  const CustomScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final goRouter = ref.read(goRouterProvider); 
     final List<Screen> screens = [
-      Screen(name: L10n.of(context)!.counter_title, path: Routes.counter)
+      Screen(name: L10n.of(context)!.counter_title, path: Routes.counter),
+      Screen(name: L10n.of(context)!.liquid_swipe_title, path: Routes.liquidSwipe)
     ];
 
     return Padding(

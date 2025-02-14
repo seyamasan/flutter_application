@@ -1,5 +1,5 @@
+import 'package:flutter_application/provider/quantity_picker_provider.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_application/quantity_picker_state.dart';
 
 void main() {
   group('QuantityPickerState Tests', () {

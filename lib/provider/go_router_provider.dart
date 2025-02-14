@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/constant/routes.dart';
 import 'package:flutter_application/l10n/app_localizations.dart';
-import 'package:flutter_application/view/custom/counter_view.dart';
-import 'package:flutter_application/view/basic_view.dart';
-import 'package:flutter_application/view/custom_view.dart';
+import 'package:flutter_application/view/custom/counter_screen.dart';
+import 'package:flutter_application/view/basic_screen.dart';
+import 'package:flutter_application/view/custom/liquid_swipe/liquid_swipe_screen.dart';
+import 'package:flutter_application/view/custom_screen.dart';
 import 'package:flutter_application/widget/bottom_nav_bar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -47,7 +48,7 @@ final goRouterProvider = Provider<GoRouter>((ref) {
                 path: Routes.basic,
                 pageBuilder: (context, state) => CustomTransitionPage(
                   key: state.pageKey,
-                  child: const BasicView(), // ベーシック画面
+                  child: const BasicScreen(), // ベーシック画面
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(
@@ -66,7 +67,7 @@ final goRouterProvider = Provider<GoRouter>((ref) {
                 path: Routes.custom,
                 pageBuilder: (context, state) => CustomTransitionPage(
                   key: state.pageKey,
-                  child: const CustomView(), // カスタム画面
+                  child: const CustomScreen(), // カスタム画面
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     return FadeTransition(
@@ -87,7 +88,23 @@ final goRouterProvider = Provider<GoRouter>((ref) {
         pageBuilder: (context, state) {
           return CustomTransitionPage(
             key: state.pageKey,
-            child: const CounterView(),
+            child: const CounterScreen(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              return FadeTransition(
+                opacity: Tween<double>(begin: 0.0, end: 1.0).animate(animation),
+                child: child,
+              );
+            }
+          );
+        }
+      ),
+      GoRoute(
+        path: Routes.liquidSwipe,
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            key: state.pageKey,
+            child: const LiquidSwipeScreen(),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
               return FadeTransition(

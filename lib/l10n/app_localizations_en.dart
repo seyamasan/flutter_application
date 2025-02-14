@@ -7,14 +7,17 @@ class L10nEn extends L10n {
   L10nEn([String locale = 'en']) : super(locale);
 
   @override
-  String get basic_title => '基本的なView';
+  String get basic_title => 'Basic Screen';
 
   @override
-  String get custom_title => 'カスタムView';
+  String get custom_title => 'Custom Screen';
 
   @override
-  String get counter_title => 'CounterView';
+  String get counter_title => 'Counter View';
 
   @override
-  String get counter_view_tap_count => 'Number of times the button was tapped:';
+  String get counter_screen_tap_count => 'Number of times the button was tapped:';
+
+  @override
+  String get liquid_swipe_title => 'Liquid Swipe Screen';
 }

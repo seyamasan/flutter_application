@@ -98,26 +98,32 @@ abstract class L10n {
   /// Basic画面のタイトル
   ///
   /// In ja, this message translates to:
-  /// **'基本的なView'**
+  /// **'基本的なScreen'**
   String get basic_title;
 
   /// カスタム画面のタイトル
   ///
   /// In ja, this message translates to:
-  /// **'カスタムView'**
+  /// **'カスタムScreen'**
   String get custom_title;
 
   /// カウンター画面のタイトル
   ///
   /// In ja, this message translates to:
-  /// **'カウンターView'**
+  /// **'カウンターScreen'**
   String get counter_title;
 
   /// カウンター画面のタップした回数
   ///
   /// In ja, this message translates to:
   /// **'ボタンをタップした回数:'**
-  String get counter_view_tap_count;
+  String get counter_screen_tap_count;
+
+  /// liquid_swipeパッケージのView
+  ///
+  /// In ja, this message translates to:
+  /// **'liquid_swipeのScreen'**
+  String get liquid_swipe_title;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

@@ -1,19 +1,23 @@
 {
     "@@locale": "en",
-    "basic_title": "基本的なView",
+    "basic_title": "Basic Screen",
     "@basic_title": {
-        "description": "Basic画面のタイトル"
+        "description": "Basic Screen Title"
     },
-    "custom_title": "カスタムView",
+    "custom_title": "Custom Screen",
     "@custom_title": {
-        "description": "カスタム画面のタイトル"
+        "description": "Custom Screen Title"
     },
-    "counter_title": "CounterView",
+    "counter_title": "Counter View",
     "@counter_title": {
-        "description": "Counter View Title"
+        "description": "Counter Screen Title"
     },
-    "counter_view_tap_count": "Number of times the button was tapped:",
-    "@counter_view_tap_count": {
+    "counter_screen_tap_count": "Number of times the button was tapped:",
+    "@counter_screen_tap_count": {
         "description": "The number of times the button was tapped on the counter screen"
+    },
+    "liquid_swipe_title": "Liquid Swipe Screen",
+    "@liquid_swipe_title": {
+        "description": "View in package liquid_swipe"
     }
 }

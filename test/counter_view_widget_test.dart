@@ -9,8 +9,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/l10n/app_localizations.dart';
 import 'package:flutter_application/provider/quantity_picker_provider.dart';
-import 'package:flutter_application/quantity_picker_state.dart';
-import 'package:flutter_application/view/custom/counter_view.dart';
+import 'package:flutter_application/view/custom/counter_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -29,7 +28,7 @@ Widget createCounterView(
   child: const MaterialApp(
     localizationsDelegates: L10n.localizationsDelegates,
     supportedLocales: L10n.supportedLocales,
-    home: CounterView()
+    home: CounterScreen()
   )
 );
 

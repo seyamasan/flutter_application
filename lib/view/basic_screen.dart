@@ -9,8 +9,8 @@ class Screen {
   Screen({required this.name, required this.path});
 }
 
-class BasicView extends ConsumerWidget {
-  const BasicView({super.key});
+class BasicScreen extends ConsumerWidget {
+  const BasicScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

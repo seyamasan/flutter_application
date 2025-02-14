@@ -4,8 +4,8 @@ import 'package:flutter_application/provider/quantity_picker_provider.dart';
 import 'package:flutter_application/provider/go_router_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class CounterView extends ConsumerWidget {
-  const CounterView({super.key});
+class CounterScreen extends ConsumerWidget {
+  const CounterScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -27,7 +27,7 @@ class CounterView extends ConsumerWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(L10n.of(context)!.counter_view_tap_count),
+            Text(L10n.of(context)!.counter_screen_tap_count),
             Text(
               '$quantity',
               style: Theme.of(context).textTheme.headlineMedium,

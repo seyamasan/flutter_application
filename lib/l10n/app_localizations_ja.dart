@@ -7,14 +7,17 @@ class L10nJa extends L10n {
   L10nJa([String locale = 'ja']) : super(locale);
 
   @override
-  String get basic_title => '基本的なView';
+  String get basic_title => '基本的なScreen';
 
   @override
-  String get custom_title => 'カスタムView';
+  String get custom_title => 'カスタムScreen';
 
   @override
-  String get counter_title => 'カウンターView';
+  String get counter_title => 'カウンターScreen';
 
   @override
-  String get counter_view_tap_count => 'ボタンをタップした回数:';
+  String get counter_screen_tap_count => 'ボタンをタップした回数:';
+
+  @override
+  String get liquid_swipe_title => 'liquid_swipeのScreen';
 }

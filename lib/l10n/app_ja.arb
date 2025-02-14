@@ -1,19 +1,23 @@
 {
     "@@locale": "ja",
-    "basic_title": "基本的なView",
+    "basic_title": "基本的なScreen",
     "@basic_title": {
         "description": "Basic画面のタイトル"
     },
-    "custom_title": "カスタムView",
+    "custom_title": "カスタムScreen",
     "@custom_title": {
         "description": "カスタム画面のタイトル"
     },
-    "counter_title": "カウンターView",
+    "counter_title": "カウンターScreen",
     "@counter_title": {
         "description": "カウンター画面のタイトル"
     },
-    "counter_view_tap_count": "ボタンをタップした回数:",
-    "@counter_view_tap_count": {
+    "counter_screen_tap_count": "ボタンをタップした回数:",
+    "@counter_screen_tap_count": {
         "description": "カウンター画面のタップした回数"
+    },
+    "liquid_swipe_title": "liquid_swipeのScreen",
+    "@liquid_swipe_title": {
+        "description": "liquid_swipeパッケージのView"
     }
 }
