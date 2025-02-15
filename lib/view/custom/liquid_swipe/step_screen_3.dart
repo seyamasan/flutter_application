@@ -33,7 +33,7 @@ class StepScreen3 extends StatelessWidget {
                 },
                 child: const Text('Go Step1!!!'),
               ),
-              const SizedBox(width: 16),  // ボタン間のスペース
+              const SizedBox(width: 16),
               ElevatedButton(
                 onPressed: () {
                   onStep2Pressed();
