@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/l10n/app_localizations.dart';
-import 'package:flutter_application/provider/quantity_picker_provider.dart';
 import 'package:flutter_application/provider/go_router_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

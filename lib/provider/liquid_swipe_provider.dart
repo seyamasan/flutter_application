@@ -1,6 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:liquid_swipe/PageHelpers/LiquidController.dart';
 
+final liquidControllerProvider = NotifierProvider<LiquidSwipeProvider, LiquidController>(() {
+  return LiquidSwipeProvider();
+});
+
 class LiquidSwipeProvider extends Notifier<LiquidController> {
 
   LiquidController get controller => state;
@@ -9,13 +13,4 @@ class LiquidSwipeProvider extends Notifier<LiquidController> {
   LiquidController build() {
     return LiquidController();
   }
-
-  // // コントローラーを更新するメソッド（必要に応じて）
-  // void updateController(LiquidController controller) {
-  //   state = controller;
-  // }
 }
-
-final liquidControllerProvider = NotifierProvider<LiquidSwipeProvider, LiquidController>(() {
-  return LiquidSwipeProvider();
-});

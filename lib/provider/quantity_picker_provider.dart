@@ -1,24 +1,29 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // QuantityPickerStateを管理するProvider
-final quantityPickerProvider = StateNotifierProvider<QuantityPickerState, int>(
-  (ref) => QuantityPickerState(
+final quantityPickerProvider = NotifierProvider<QuantityPickerProvider, int>(() {
+  return QuantityPickerProvider(
     minQuantity: 0,
     maxQuantity: 10,
     initialQuantity: 0,
-  )
-);
+  );
+});
 
-class QuantityPickerState extends StateNotifier<int> {
+class QuantityPickerProvider extends Notifier<int> {
   final int minQuantity;
   final int maxQuantity;
+  final int initialQuantity;
 
-  QuantityPickerState({
+  QuantityPickerProvider({
     required this.minQuantity,
     required this.maxQuantity,
-    required int initialQuantity,
-  }) : super(initialQuantity.coerceIn(minQuantity, maxQuantity));
+    required this.initialQuantity,
+  });
 
+  @override
+  int build() {
+    return initialQuantity.coerceIn(minQuantity, maxQuantity);
+  }
 
   // 現在の数量を取得
   int get quantity => state;

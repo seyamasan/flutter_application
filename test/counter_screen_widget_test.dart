@@ -13,13 +13,13 @@ import 'package:flutter_application/view/custom/counter_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-Widget createCounterView(
+Widget createCounterScreen(
   int minQuantity,
   int maxQuantity,
   int initialQuantity
 ) => ProviderScope(
   overrides: [
-    quantityPickerProvider.overrideWith((ref) => QuantityPickerState(
+    quantityPickerProvider.overrideWith(() => QuantityPickerProvider(
       minQuantity: minQuantity,
       maxQuantity: maxQuantity,
       initialQuantity: initialQuantity,
@@ -33,12 +33,12 @@ Widget createCounterView(
 );
 
 void main() {
-  group('CounterView Tests', () {
+  group('CounterScreen Tests', () {
 
     // AddとRemoveボタンの挙動
     testWidgets('Test counter functionality (increment and decrement)', (WidgetTester tester) async {
       await tester.pumpWidget(
-        createCounterView(0, 10, 0)
+        createCounterScreen(0, 10, 0)
       );
 
       expect(find.text('0'), findsOneWidget); // Finderで指定した条件のWidgetが一つだけ存在している場合。
@@ -64,7 +64,7 @@ void main() {
     // Addボタンの挙動
     testWidgets('Test counter functionality (increment)', (WidgetTester tester) async {
       await tester.pumpWidget(
-        createCounterView(0, 10, 1)
+        createCounterScreen(0, 10, 1)
       );
 
       expect(find.text('1'), findsOneWidget);
@@ -82,7 +82,7 @@ void main() {
     // Removeボタンの挙動
     testWidgets('Test counter functionality (decrement)', (WidgetTester tester) async {
       await tester.pumpWidget(
-        createCounterView(0, 10, 1)
+        createCounterScreen(0, 10, 1)
       );
 
       expect(find.text('1'), findsOneWidget);
