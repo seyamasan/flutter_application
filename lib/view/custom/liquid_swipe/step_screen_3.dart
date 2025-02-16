@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/provider/liquid_swipe_provider.dart';
+import 'package:flutter_application/provider/liquid_swipe_view_model_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class StepScreen3 extends StatelessWidget {
-  final VoidCallback onStep1Pressed;
-  final VoidCallback onStep2Pressed;
-
-  const StepScreen3({super.key, required this.onStep1Pressed, required this.onStep2Pressed});
+class StepScreen3 extends ConsumerWidget {
+  const StepScreen3({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final liquidController = ref.read(liquidControllerProvider);
+    final liquidSwipeViewModelNotifer = ref.read(liquidSwipeViewModelProvider.notifier);
+    
     return Container(
       color: Colors.green,
       width: double.infinity,
@@ -29,16 +32,35 @@ class StepScreen3 extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  onStep1Pressed();
+                  liquidController.animateToPage(page: 0);
                 },
                 child: const Text('Go Step1!!!'),
               ),
               const SizedBox(width: 16),
               ElevatedButton(
                 onPressed: () {
-                  onStep2Pressed();
+                  liquidController.animateToPage(page: 1);
                 },
                 child: const Text('Go Step2!!!')
+              ),
+              const SizedBox(width: 16),
+              ElevatedButton(
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: const Text("Output list"),
+                      content: Text(liquidSwipeViewModelNotifer.getOutput()),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: const Text("OK"),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+                child: const Text("Output"),
               )
             ],
           ),

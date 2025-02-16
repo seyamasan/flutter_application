@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/provider/go_router_provider.dart';
 import 'package:flutter_application/provider/liquid_swipe_provider.dart';
+import 'package:flutter_application/provider/liquid_swipe_view_model_provider.dart';
 import 'package:flutter_application/view/custom/liquid_swipe/step_screen_1.dart';
 import 'package:flutter_application/view/custom/liquid_swipe/step_screen_2.dart';
 import 'package:flutter_application/view/custom/liquid_swipe/step_screen_3.dart';
@@ -28,18 +29,11 @@ class LiquidSwipeScreen extends ConsumerWidget {
         ),
         child: StepScreen2(),
       ),
-      DefaultTextStyle(
-        style: const TextStyle(
+      const DefaultTextStyle(
+        style: TextStyle(
           decoration: TextDecoration.none,
         ),
-        child: StepScreen3(
-          onStep1Pressed: () {
-            liquidController.animateToPage(page: 0); // 0番目のページに移動
-          },
-          onStep2Pressed: () {
-            liquidController.animateToPage(page: 1);
-          }
-        )
+        child: StepScreen3()
       )
     ];
 
@@ -54,6 +48,7 @@ class LiquidSwipeScreen extends ConsumerWidget {
           leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios),
             onPressed: () {
+              disposeViewModel(ref);
               goRouter.pop();
             },
           )
@@ -67,5 +62,9 @@ class LiquidSwipeScreen extends ConsumerWidget {
         )
       )
     );
+  }
+
+  void disposeViewModel(WidgetRef ref) {
+    ref.invalidate(liquidSwipeViewModelProvider);
   }
 }

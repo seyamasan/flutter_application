@@ -15,7 +15,7 @@ class StepScreen2 extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final liquidSwipeViewModel = ref.read(liquidSwipeViewModelProvider);
+    final liquidSwipeViewModel = ref.watch(liquidSwipeViewModelProvider);
     final liquidSwipeViewModelNotifer = ref.read(liquidSwipeViewModelProvider.notifier);
 
     return Container(
@@ -44,7 +44,7 @@ class StepScreen2 extends ConsumerWidget {
             }).toList(),
             onChanged: (String? newValue) {
               if (newValue != null) {
-                liquidSwipeViewModelNotifer.updateNumber(newValue);
+                liquidSwipeViewModelNotifer.updateOption(newValue);
               }
             }
           )

@@ -12,14 +12,19 @@ class LiquidSwipeviewModel extends Notifier<LiquidSwipeviewModelState> {
     state = state.copyWith(text: text);
   }
 
-  // 番号の状態を更新
-  void updateNumber(String label) {
+  // Optionの状態を更新
+  void updateOption(String label) {
     Options selectedOption = Options.values.firstWhere(
       (option) => option.label == label,
       orElse: () => Options.noSelection,
     );
 
     state = state.copyWith(number: selectedOption.number, optionText: selectedOption.label);
+  }
+
+  String getOutput() {
+    List<String> list = [state.text, state.number.toString(), state.optionText];
+    return list.join(', '); // カンマ区切りで結合
   }
 }
 
