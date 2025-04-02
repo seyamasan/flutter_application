@@ -9,8 +9,7 @@ Flutter study repository.
 - go_router
 
 ## Localization
-- intl
-- flutter_localization
+- slang
 
 ## Others
 - liquid_swipe

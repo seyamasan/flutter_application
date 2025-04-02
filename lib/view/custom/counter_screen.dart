@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/l10n/app_localizations.dart';
+import 'package:flutter_application/i18n/strings.g.dart';
 import 'package:flutter_application/provider/quantity_picker_provider.dart';
 import 'package:flutter_application/provider/go_router_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,7 +15,7 @@ class CounterScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(L10n.of(context)!.counter_title),
+        title: Text(t.counter.title),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
           onPressed: () {
@@ -27,7 +27,7 @@ class CounterScreen extends ConsumerWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(L10n.of(context)!.counter_screen_tap_count),
+            Text(t.counter.tap_count),
             Text(
               '$quantity',
               style: Theme.of(context).textTheme.headlineMedium,

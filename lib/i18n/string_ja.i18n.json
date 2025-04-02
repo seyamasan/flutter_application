@@ -1,0 +1,15 @@
+{
+    "basic": {
+        "title": "基本的なScreen"
+    },
+    "custom": {
+        "title": "カスタムScreen"
+    },
+    "counter": {
+        "title": "カウンターScreen",
+        "tap_count": "ボタンをタップした回数:"
+    },
+    "liquid_swipe": {
+        "title": "liquid_swipeのScreen"
+    }
+}

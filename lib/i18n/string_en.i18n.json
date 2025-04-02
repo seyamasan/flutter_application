@@ -1,0 +1,15 @@
+{
+    "basic": {
+        "title": "Basic Screen"
+    },
+    "custom": {
+        "title": "Custom Screen"
+    },
+    "counter": {
+        "title": "Counter Screen",
+        "tap_count": "Number of times the button was tapped:"
+    },
+    "liquid_swipe": {
+        "title": "Liquid Swipe Screen"
+    }
+}

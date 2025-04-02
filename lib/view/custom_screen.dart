@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/constant/routes.dart';
-import 'package:flutter_application/l10n/app_localizations.dart';
+import 'package:flutter_application/i18n/strings.g.dart';
 import 'package:flutter_application/provider/go_router_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -18,8 +18,8 @@ class CustomScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final goRouter = ref.read(goRouterProvider); 
     final List<Screen> screens = [
-      Screen(name: L10n.of(context)!.counter_title, path: Routes.counter),
-      Screen(name: L10n.of(context)!.liquid_swipe_title, path: Routes.liquidSwipe)
+      Screen(name: t.counter.title, path: Routes.counter),
+      Screen(name: t.liquid_swipe.title, path: Routes.liquidSwipe)
     ];
 
     return Padding(

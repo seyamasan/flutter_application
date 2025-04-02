@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/constant/routes.dart';
-import 'package:flutter_application/l10n/app_localizations.dart';
+import 'package:flutter_application/i18n/strings.g.dart';
 import 'package:flutter_application/provider/go_router_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -31,11 +31,11 @@ class BottomNavBar extends ConsumerWidget {
       items: [
         BottomNavigationBarItem(
           icon: _buildIcon(Icons.dashboard, currentIndex == 0),
-          label: L10n.of(context)!.basic_title,
+          label: t.basic.title,
         ),
         BottomNavigationBarItem(
           icon: _buildIcon(Icons.palette, currentIndex == 1),
-          label: L10n.of(context)!.custom_title,
+          label: t.custom.title,
         )
       ],
     );

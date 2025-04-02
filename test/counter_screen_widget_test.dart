@@ -7,7 +7,6 @@
 // ツリーの子ウィジェットを探したり、テキストを読み込んだり、ウィジェットのプロパティの値が正しいかどうかを検証したりすることもできます。
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application/l10n/app_localizations.dart';
 import 'package:flutter_application/provider/quantity_picker_provider.dart';
 import 'package:flutter_application/view/custom/counter_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,8 +25,6 @@ Widget createCounterScreen(
     ))
   ],
   child: const MaterialApp(
-    localizationsDelegates: L10n.localizationsDelegates,
-    supportedLocales: L10n.supportedLocales,
     home: CounterScreen()
   )
 );

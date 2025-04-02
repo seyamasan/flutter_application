@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/constant/routes.dart';
-import 'package:flutter_application/l10n/app_localizations.dart';
+import 'package:flutter_application/i18n/strings.g.dart';
 import 'package:flutter_application/view/custom/counter_screen.dart';
 import 'package:flutter_application/view/basic_screen.dart';
 import 'package:flutter_application/view/custom/liquid_swipe/liquid_swipe_screen.dart';
@@ -21,10 +21,10 @@ final goRouterProvider = Provider<GoRouter>((ref) {
           String title;
           switch (state.matchedLocation) {
             case Routes.basic:
-              title = L10n.of(context)!.basic_title;
+              title = t.basic.title;
               break;
             case Routes.custom:
-              title = L10n.of(context)!.custom_title;
+              title = t.custom.title;
               break;
             default:
               title = 'Error';

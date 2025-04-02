@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/l10n/app_localizations.dart';
 import 'package:flutter_application/provider/liquid_swipe_provider.dart';
 import 'package:flutter_application/view/custom/liquid_swipe/liquid_swipe_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -11,8 +10,6 @@ Widget createLiquidSwipeScreen(
 ) => UncontrolledProviderScope(
   container: container,
   child: const MaterialApp(
-    localizationsDelegates: L10n.localizationsDelegates,
-    supportedLocales: L10n.supportedLocales,
     home: LiquidSwipeScreen()
   )
 );
