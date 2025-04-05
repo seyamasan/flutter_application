@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/constant/routes.dart';
+import 'package:flutter_application/i18n/strings.g.dart';
 import 'package:flutter_application/provider/router/go_router_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -15,7 +17,9 @@ class BasicScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final goRouter = ref.read(goRouterProvider); 
-    final List<Screen> screens = [];
+    final List<Screen> screens = [
+      Screen(name: t.self_introduction.title, path: Routes.selfIntroduction)
+    ];
 
     return Padding(
       padding: const EdgeInsets.all(12.0),

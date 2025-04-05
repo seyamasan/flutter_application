@@ -2,14 +2,22 @@
     "basic": {
         "title": "基本的なScreen"
     },
+    "self_introduction": {
+        "title": "自己紹介",
+        "name_label": "名前(String):",
+        "name": "瀬山皐太",
+        "age_label": "年齢(int):",
+        "height_label": "身長(double):",
+        "working_label": "就業中(bool):"
+    },
     "custom": {
         "title": "カスタムScreen"
     },
     "counter": {
-        "title": "カウンターScreen",
+        "title": "Counter",
         "tap_count": "ボタンをタップした回数:"
     },
     "liquid_swipe": {
-        "title": "liquid_swipeのScreen"
+        "title": "Liquid swipe"
     }
 }

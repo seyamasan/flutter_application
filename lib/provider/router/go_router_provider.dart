@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/constant/routes.dart';
 import 'package:flutter_application/i18n/strings.g.dart';
+import 'package:flutter_application/view/basic/self_introduction_screen.dart';
 import 'package:flutter_application/view/custom/counter_screen.dart';
 import 'package:flutter_application/view/basic_screen.dart';
 import 'package:flutter_application/view/custom/liquid_swipe/liquid_swipe_screen.dart';
@@ -22,16 +23,14 @@ GoRouter goRouter(Ref ref) {
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
           // 画面のパスに応じてタイトルを設定
-          String title;
-          switch (state.matchedLocation) {
+          String title = '';
+          switch (state.topRoute?.path) {
             case Routes.basic:
               title = t.basic.title;
               break;
             case Routes.custom:
               title = t.custom.title;
               break;
-            default:
-              title = 'Error';
           }
           return Scaffold(
             appBar: AppBar(title: Text(
@@ -50,17 +49,9 @@ GoRouter goRouter(Ref ref) {
             routes: <RouteBase>[
               GoRoute(
                 path: Routes.basic,
-                pageBuilder: (context, state) => CustomTransitionPage(
+                pageBuilder: (context, state) => NoTransitionPage(
                   key: state.pageKey,
-                  child: const BasicScreen(), // ベーシック画面
-                  transitionsBuilder:
-                      (context, animation, secondaryAnimation, child) {
-                    return FadeTransition(
-                      opacity: Tween<double>(begin: 0.0, end: 1.0)
-                          .animate(animation),
-                      child: child,
-                    );
-                  }
+                  child: const BasicScreen() // ベーシック画面
                 )
               )
             ]
@@ -69,17 +60,9 @@ GoRouter goRouter(Ref ref) {
             routes: <RouteBase>[
               GoRoute(
                 path: Routes.custom,
-                pageBuilder: (context, state) => CustomTransitionPage(
+                pageBuilder: (context, state) => NoTransitionPage(
                   key: state.pageKey,
-                  child: const CustomScreen(), // カスタム画面
-                  transitionsBuilder:
-                      (context, animation, secondaryAnimation, child) {
-                    return FadeTransition(
-                      opacity: Tween<double>(begin: 0.0, end: 1.0)
-                          .animate(animation),
-                      child: child,
-                    );
-                  }
+                  child: const CustomScreen() // カスタム画面
                 )
               )
             ]
@@ -88,15 +71,33 @@ GoRouter goRouter(Ref ref) {
       ),
       // ボトムナビゲーションなしの画面
       GoRoute(
+        path: Routes.selfIntroduction,
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            child: const SelfIntroductionScreen(),
+            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+              return SlideTransition(
+                position: Tween<Offset>(
+                  begin: const Offset(1.0, 0.0), // 右から
+                  end: Offset.zero,
+                ).animate(animation),
+                child: child,
+              );
+            }
+          );
+        }
+      ),
+      GoRoute(
         path: Routes.counter,
         pageBuilder: (context, state) {
           return CustomTransitionPage(
-            key: state.pageKey,
             child: const CounterScreen(),
-            transitionsBuilder:
-                (context, animation, secondaryAnimation, child) {
-              return FadeTransition(
-                opacity: Tween<double>(begin: 0.0, end: 1.0).animate(animation),
+            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+              return SlideTransition(
+                position: Tween<Offset>(
+                  begin: const Offset(1.0, 0.0),
+                  end: Offset.zero,
+                ).animate(animation),
                 child: child,
               );
             }
@@ -107,12 +108,13 @@ GoRouter goRouter(Ref ref) {
         path: Routes.liquidSwipe,
         pageBuilder: (context, state) {
           return CustomTransitionPage(
-            key: state.pageKey,
             child: const LiquidSwipeScreen(),
-            transitionsBuilder:
-                (context, animation, secondaryAnimation, child) {
-              return FadeTransition(
-                opacity: Tween<double>(begin: 0.0, end: 1.0).animate(animation),
+            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+              return SlideTransition(
+                position: Tween<Offset>(
+                  begin: const Offset(1.0, 0.0),
+                  end: Offset.zero,
+                ).animate(animation),
                 child: child,
               );
             }

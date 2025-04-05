@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/i18n/strings.g.dart';
 import 'package:flutter_application/provider/quantity_picker/quantity_picker_provider.dart';
-import 'package:flutter_application/provider/router/go_router_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class CounterScreen extends ConsumerWidget {
@@ -18,7 +17,6 @@ class CounterScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final goRouter = ref.read(goRouterProvider); 
     final state = ref.watch(quantityPickerProvider(
       minQuantity: minQuantity,
       maxQuantity: maxQuantity,
@@ -32,11 +30,11 @@ class CounterScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(t.counter.title),
+        title: Text(t.counter.title, style: const TextStyle(fontWeight: FontWeight.bold)),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
           onPressed: () {
-            goRouter.pop(); // 戻るボタンの処理
+            Navigator.pop(context); // 戻るボタンの処理
           },
         )
       ),

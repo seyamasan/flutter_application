@@ -2,14 +2,22 @@
     "basic": {
         "title": "Basic Screen"
     },
+    "self_introduction": {
+        "title": "Self introduction",
+        "name_label": "Name(String):",
+        "name": "Kota Seyama",
+        "age_label": "Age(int):",
+        "height_label": "Height(double):",
+        "working_label": "Working(bool):"
+    },
     "custom": {
         "title": "Custom Screen"
     },
     "counter": {
-        "title": "Counter Screen",
+        "title": "Counter",
         "tap_count": "Number of times the button was tapped:"
     },
     "liquid_swipe": {
-        "title": "Liquid Swipe Screen"
+        "title": "Liquid swipe"
     }
 }

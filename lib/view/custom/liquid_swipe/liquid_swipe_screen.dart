@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/provider/router/go_router_provider.dart';
 import 'package:flutter_application/provider/liquid_swipe/liquid_swipe_controller_provider.dart';
 import 'package:flutter_application/view/custom/liquid_swipe/step_screen_1.dart';
 import 'package:flutter_application/view/custom/liquid_swipe/step_screen_2.dart';
@@ -12,7 +11,6 @@ class LiquidSwipeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final goRouter = ref.read(goRouterProvider); 
     final liquidController = ref.read(liquidSwipeControllerProvider);
 
     List<Widget> pages = <Widget>[
@@ -47,8 +45,7 @@ class LiquidSwipeScreen extends ConsumerWidget {
           leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios),
             onPressed: () {
-              // disposeViewModel(ref);
-              goRouter.pop();
+              Navigator.pop(context);
             },
           )
         ),
@@ -62,8 +59,4 @@ class LiquidSwipeScreen extends ConsumerWidget {
       )
     );
   }
-
-  // void disposeViewModel(WidgetRef ref) {
-  //   ref.invalidate(liquidSwipeViewModelProvider);
-  // }
 }

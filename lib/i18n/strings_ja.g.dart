@@ -40,6 +40,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 
 	// Translations
 	late final TranslationsBasicJa basic = TranslationsBasicJa._(_root);
+	late final TranslationsSelfIntroductionJa self_introduction = TranslationsSelfIntroductionJa._(_root);
 	late final TranslationsCustomJa custom = TranslationsCustomJa._(_root);
 	late final TranslationsCounterJa counter = TranslationsCounterJa._(_root);
 	late final TranslationsLiquidSwipeJa liquid_swipe = TranslationsLiquidSwipeJa._(_root);
@@ -53,6 +54,21 @@ class TranslationsBasicJa {
 
 	// Translations
 	String get title => '基本的なScreen';
+}
+
+// Path: self_introduction
+class TranslationsSelfIntroductionJa {
+	TranslationsSelfIntroductionJa._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => '自己紹介';
+	String get name_label => '名前(String):';
+	String get name => '瀬山皐太';
+	String get age_label => '年齢(int):';
+	String get height_label => '身長(double):';
+	String get working_label => '就業中(bool):';
 }
 
 // Path: custom
@@ -72,7 +88,7 @@ class TranslationsCounterJa {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get title => 'カウンターScreen';
+	String get title => 'Counter';
 	String get tap_count => 'ボタンをタップした回数:';
 }
 
@@ -83,7 +99,7 @@ class TranslationsLiquidSwipeJa {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get title => 'liquid_swipeのScreen';
+	String get title => 'Liquid swipe';
 }
 
 /// Flat map(s) containing all translations.
@@ -92,10 +108,16 @@ extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'basic.title': return '基本的なScreen';
+			case 'self_introduction.title': return '自己紹介';
+			case 'self_introduction.name_label': return '名前(String):';
+			case 'self_introduction.name': return '瀬山皐太';
+			case 'self_introduction.age_label': return '年齢(int):';
+			case 'self_introduction.height_label': return '身長(double):';
+			case 'self_introduction.working_label': return '就業中(bool):';
 			case 'custom.title': return 'カスタムScreen';
-			case 'counter.title': return 'カウンターScreen';
+			case 'counter.title': return 'Counter';
 			case 'counter.tap_count': return 'ボタンをタップした回数:';
-			case 'liquid_swipe.title': return 'liquid_swipeのScreen';
+			case 'liquid_swipe.title': return 'Liquid swipe';
 			default: return null;
 		}
 	}
