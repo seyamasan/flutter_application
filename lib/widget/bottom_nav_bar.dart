@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/constant/routes.dart';
 import 'package:flutter_application/i18n/strings.g.dart';
-import 'package:flutter_application/provider/go_router_provider.dart';
+import 'package:flutter_application/provider/router/go_router_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // ボトムナビゲーションバー

@@ -8,9 +8,13 @@ import 'package:flutter_application/view/custom_screen.dart';
 import 'package:flutter_application/widget/bottom_nav_bar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+part 'go_router_provider.g.dart';
 
 // GoRouterをProviderで提供
-final goRouterProvider = Provider<GoRouter>((ref) {
+@riverpod
+GoRouter goRouter(Ref ref) {
   return GoRouter(
     initialLocation: Routes.basic, // 初期遷移先
     routes: <RouteBase>[
@@ -117,4 +121,4 @@ final goRouterProvider = Provider<GoRouter>((ref) {
       )
     ]
   );
-});
+}

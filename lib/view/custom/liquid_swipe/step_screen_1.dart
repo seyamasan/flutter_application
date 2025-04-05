@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/constant/custom_colors.dart';
 import 'package:flutter_application/constant/dimensions.dart';
-import 'package:flutter_application/provider/liquid_swipe_view_model_provider.dart';
+import 'package:flutter_application/viewmodel/custom/liquid_swipe/liquid_swipe_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class StepScreen1 extends ConsumerWidget {
@@ -9,8 +9,8 @@ class StepScreen1 extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final liquidSwipeViewModel = ref.read(liquidSwipeViewModelProvider);
-    final liquidSwipeViewModelNotifer = ref.read(liquidSwipeViewModelProvider.notifier);
+    final state = ref.watch(liquidSwipeViewModelProvider);
+    final viewModel = ref.read(liquidSwipeViewModelProvider.notifier);
 
     return Container(
       color: Colors.red,
@@ -31,14 +31,14 @@ class StepScreen1 extends ConsumerWidget {
           SizedBox(
             width: Dimensions.getWidth60(context),
             child: TextFormField(
+              initialValue: state.text,
               decoration: const InputDecoration(
                 labelText: 'Input',
                 labelStyle: TextStyle(color: CustomColors.lightGray1),
                 border: OutlineInputBorder(),
               ),
               style: const TextStyle(color: CustomColors.lightGray1),
-              onChanged: (text) => liquidSwipeViewModelNotifer.updateText(text),
-              controller: TextEditingController(text: liquidSwipeViewModel.text)
+              onChanged: (text) => viewModel.updateText(text)
             )
           )
         ]

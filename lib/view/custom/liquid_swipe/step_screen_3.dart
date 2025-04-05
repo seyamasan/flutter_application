@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/provider/liquid_swipe_provider.dart';
-import 'package:flutter_application/provider/liquid_swipe_view_model_provider.dart';
+import 'package:flutter_application/provider/liquid_swipe/liquid_swipe_controller_provider.dart';
+import 'package:flutter_application/viewmodel/custom/liquid_swipe/liquid_swipe_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class StepScreen3 extends ConsumerWidget {
@@ -8,8 +8,8 @@ class StepScreen3 extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final liquidController = ref.read(liquidControllerProvider);
-    final liquidSwipeViewModelNotifer = ref.read(liquidSwipeViewModelProvider.notifier);
+    final liquidController = ref.read(liquidSwipeControllerProvider);
+    final viewModel = ref.read(liquidSwipeViewModelProvider.notifier);
     
     return Container(
       color: Colors.green,
@@ -50,7 +50,7 @@ class StepScreen3 extends ConsumerWidget {
                     context: context,
                     builder: (context) => AlertDialog(
                       title: const Text("Output list"),
-                      content: Text(liquidSwipeViewModelNotifer.getOutput()),
+                      content: Text(viewModel.getOutput()),
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.pop(context),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/provider/go_router_provider.dart';
+import 'package:flutter_application/provider/router/go_router_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class Screen {

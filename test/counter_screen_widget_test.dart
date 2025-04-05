@@ -7,7 +7,6 @@
 // ツリーの子ウィジェットを探したり、テキストを読み込んだり、ウィジェットのプロパティの値が正しいかどうかを検証したりすることもできます。
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application/provider/quantity_picker_provider.dart';
 import 'package:flutter_application/view/custom/counter_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -17,15 +16,12 @@ Widget createCounterScreen(
   int maxQuantity,
   int initialQuantity
 ) => ProviderScope(
-  overrides: [
-    quantityPickerProvider.overrideWith(() => QuantityPickerProvider(
+  child: MaterialApp(
+    home: CounterScreen(
       minQuantity: minQuantity,
       maxQuantity: maxQuantity,
-      initialQuantity: initialQuantity,
-    ))
-  ],
-  child: const MaterialApp(
-    home: CounterScreen()
+      initialQuantity: initialQuantity
+    )
   )
 );
 

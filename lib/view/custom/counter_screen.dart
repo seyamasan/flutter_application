@@ -1,17 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/i18n/strings.g.dart';
-import 'package:flutter_application/provider/quantity_picker_provider.dart';
-import 'package:flutter_application/provider/go_router_provider.dart';
+import 'package:flutter_application/provider/quantity_picker/quantity_picker_provider.dart';
+import 'package:flutter_application/provider/router/go_router_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class CounterScreen extends ConsumerWidget {
-  const CounterScreen({super.key});
+    const CounterScreen({
+    super.key,
+    this.minQuantity = 0,
+    this.maxQuantity = 10,
+    this.initialQuantity = 0,
+  });
+
+  final int minQuantity;
+  final int maxQuantity;
+  final int initialQuantity;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final goRouter = ref.read(goRouterProvider); 
-    final quantity = ref.watch(quantityPickerProvider);
-    final notifier = ref.watch(quantityPickerProvider.notifier);
+    final state = ref.watch(quantityPickerProvider(
+      minQuantity: minQuantity,
+      maxQuantity: maxQuantity,
+      initialQuantity: initialQuantity
+    ));
+    final quantityPicker = ref.read(quantityPickerProvider(
+      minQuantity: minQuantity,
+      maxQuantity: maxQuantity,
+      initialQuantity: initialQuantity
+    ).notifier);
 
     return Scaffold(
       appBar: AppBar(
@@ -29,7 +46,7 @@ class CounterScreen extends ConsumerWidget {
           children: <Widget>[
             Text(t.counter.tap_count),
             Text(
-              '$quantity',
+              '$state',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(height: 16), // スペース
@@ -39,7 +56,7 @@ class CounterScreen extends ConsumerWidget {
                 // マイナスボタン
                 OutlinedButton(
                   onPressed: () {
-                    notifier.decrease(); // 減少
+                    quantityPicker.decrease(); // 減少
                   },
                   style: OutlinedButton.styleFrom(
                     shape: const CircleBorder(),
@@ -53,7 +70,7 @@ class CounterScreen extends ConsumerWidget {
                 // プラスボタン
                 OutlinedButton(
                   onPressed: () {
-                    notifier.increase(); // 増加
+                    quantityPicker.increase(); // 増加
                   },
                   style: OutlinedButton.styleFrom(
                     shape: const CircleBorder(),

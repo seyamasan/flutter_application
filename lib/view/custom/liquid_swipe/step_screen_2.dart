@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/provider/liquid_swipe_view_model_provider.dart';
 import 'package:flutter_application/util/options.dart';
+import 'package:flutter_application/viewmodel/custom/liquid_swipe/liquid_swipe_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class StepScreen2 extends ConsumerWidget {
@@ -15,8 +15,8 @@ class StepScreen2 extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final liquidSwipeViewModel = ref.watch(liquidSwipeViewModelProvider);
-    final liquidSwipeViewModelNotifer = ref.read(liquidSwipeViewModelProvider.notifier);
+    final state = ref.watch(liquidSwipeViewModelProvider);
+    final viewModel = ref.read(liquidSwipeViewModelProvider.notifier);
 
     return Container(
       color: Colors.yellow,
@@ -35,7 +35,7 @@ class StepScreen2 extends ConsumerWidget {
           ),
           const SizedBox(height: 48),
           DropdownButton<String>(
-            value: liquidSwipeViewModel.optionText,
+            value: state.option.label,
             items: items.map((String item) {
               return DropdownMenuItem(
                 value: item,
@@ -44,7 +44,7 @@ class StepScreen2 extends ConsumerWidget {
             }).toList(),
             onChanged: (String? newValue) {
               if (newValue != null) {
-                liquidSwipeViewModelNotifer.updateOption(newValue);
+                viewModel.updateOption(newValue);
               }
             }
           )

@@ -4,6 +4,7 @@ Flutter study repository.
 
 ## State management
 - flutter_riverpod
+- riverpod_annotation
 
 ## Screen transition
 - go_router
@@ -13,3 +14,4 @@ Flutter study repository.
 
 ## Others
 - liquid_swipe
+- freezed

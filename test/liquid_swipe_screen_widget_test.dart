@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/provider/liquid_swipe_provider.dart';
+import 'package:flutter_application/provider/liquid_swipe/liquid_swipe_controller_provider.dart';
 import 'package:flutter_application/view/custom/liquid_swipe/liquid_swipe_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -21,12 +21,12 @@ void main() {
     testWidgets('Test swipe to transition (Single swipe)', (WidgetTester tester) async {
       final container = ProviderContainer(
         overrides: [
-          liquidControllerProvider.overrideWith(() => LiquidSwipeProvider())
+          liquidSwipeControllerProvider.overrideWith(() => LiquidSwipeController())
         ]
       );
 
       await tester.pumpWidget(createLiquidSwipeScreen(container));
-      final liquidController = container.read(liquidControllerProvider);
+      final liquidController = container.read(liquidSwipeControllerProvider);
 
       expect(liquidController.currentPage, equals(0));
       expect(liquidController.currentPage, isNot(1));
@@ -45,12 +45,12 @@ void main() {
   testWidgets('Test swipe to transition (Double swipe)', (WidgetTester tester) async {
     final container = ProviderContainer(
       overrides: [
-        liquidControllerProvider.overrideWith(() => LiquidSwipeProvider())
+        liquidSwipeControllerProvider.overrideWith(() => LiquidSwipeController())
       ]
     );
 
     await tester.pumpWidget(createLiquidSwipeScreen(container));
-    final liquidController = container.read(liquidControllerProvider);
+    final liquidController = container.read(liquidSwipeControllerProvider);
 
     expect(liquidController.currentPage, equals(0));
     expect(liquidController.currentPage, isNot(2));
@@ -71,12 +71,12 @@ void main() {
   testWidgets('Test swipe through all pages', (WidgetTester tester) async {
     final container = ProviderContainer(
       overrides: [
-        liquidControllerProvider.overrideWith(() => LiquidSwipeProvider())
+        liquidSwipeControllerProvider.overrideWith(() => LiquidSwipeController())
       ]
     );
 
     await tester.pumpWidget(createLiquidSwipeScreen(container));
-    final liquidController = container.read(liquidControllerProvider);
+    final liquidController = container.read(liquidSwipeControllerProvider);
 
     expect(liquidController.currentPage, equals(0));
 

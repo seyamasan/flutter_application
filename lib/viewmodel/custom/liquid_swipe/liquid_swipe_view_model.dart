@@ -1,10 +1,15 @@
+import 'package:flutter_application/model/custom/liquid_swipe/liquid_swipe_state.dart';
 import 'package:flutter_application/util/options.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-class LiquidSwipeviewModel extends Notifier<LiquidSwipeviewModelState> {
+part 'liquid_swipe_view_model.g.dart';
+
+@riverpod
+class LiquidSwipeViewModel extends _$LiquidSwipeViewModel {
+
   @override
-  LiquidSwipeviewModelState build() {
-    return LiquidSwipeviewModelState();
+  LiquidSwipeState build() {
+    return LiquidSwipeState();
   }
 
   // textの状態を更新
@@ -13,37 +18,18 @@ class LiquidSwipeviewModel extends Notifier<LiquidSwipeviewModelState> {
   }
 
   // Optionの状態を更新
-  void updateOption(String label) {
+  void updateOption(String optionStr) {
     Options selectedOption = Options.values.firstWhere(
-      (option) => option.label == label,
+      (option) => option.label == optionStr,
       orElse: () => Options.noSelection,
     );
 
-    state = state.copyWith(number: selectedOption.number, optionText: selectedOption.label);
+    state = state.copyWith(option: selectedOption);
   }
 
   String getOutput() {
-    List<String> list = [state.text, state.number.toString(), state.optionText];
+    List<String> list = [state.text, state.option.number.toString(), state.option.label];
     return list.join(', '); // カンマ区切りで結合
   }
-}
 
-class LiquidSwipeviewModelState {
-  final String text;
-  final int number;
-  final String optionText;
-
-  LiquidSwipeviewModelState({
-    this.text = '',
-    this.number = 0,
-    this.optionText = 'No selection'
-  });
-
-  LiquidSwipeviewModelState copyWith({String? text, int? number, String? optionText}) {
-    return LiquidSwipeviewModelState(
-      text: text ?? this.text,
-      number: number ?? this.number,
-      optionText: optionText ?? this.optionText
-    );
-  }
 }
