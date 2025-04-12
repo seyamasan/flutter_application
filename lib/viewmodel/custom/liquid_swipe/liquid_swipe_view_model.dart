@@ -1,4 +1,4 @@
-import 'package:flutter_application/model/custom/liquid_swipe/liquid_swipe_state.dart';
+import 'package:flutter_application/model/state/custom/liquid_swipe/liquid_swipe_state.dart';
 import 'package:flutter_application/util/options.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

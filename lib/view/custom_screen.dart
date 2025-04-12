@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/constant/routes.dart';
 import 'package:flutter_application/i18n/strings.g.dart';
+import 'package:flutter_application/model/data/screen_items.dart';
 import 'package:flutter_application/provider/router/go_router_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-class Screen {
-  final String name;
-  final String path;
-
-  Screen({required this.name, required this.path});
-}
 
 class CustomScreen extends ConsumerWidget {
   const CustomScreen({super.key});
@@ -17,9 +11,9 @@ class CustomScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final goRouter = ref.read(goRouterProvider); 
-    final List<Screen> screens = [
-      Screen(name: t.counter.title, path: Routes.counter),
-      Screen(name: t.liquid_swipe.title, path: Routes.liquidSwipe)
+    final List<ScreenItems> screens = [
+      ScreenItems(name: t.counter.title, path: Routes.counter),
+      ScreenItems(name: t.liquid_swipe.title, path: Routes.liquidSwipe)
     ];
 
     return Padding(

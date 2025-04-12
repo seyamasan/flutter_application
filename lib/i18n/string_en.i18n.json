@@ -10,6 +10,12 @@
         "height_label": "Height(double):",
         "working_label": "Working(bool):"
     },
+    "refresh_indicator": {
+        "title": "Refresh indicator",
+        "item": "Item",
+        "update": "Update",
+        "remove": "removed."
+    },
     "custom": {
         "title": "Custom Screen"
     },

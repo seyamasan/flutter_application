@@ -41,6 +41,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	// Translations
 	late final TranslationsBasicJa basic = TranslationsBasicJa._(_root);
 	late final TranslationsSelfIntroductionJa self_introduction = TranslationsSelfIntroductionJa._(_root);
+	late final TranslationsRefreshIndicatorJa refresh_indicator = TranslationsRefreshIndicatorJa._(_root);
 	late final TranslationsCustomJa custom = TranslationsCustomJa._(_root);
 	late final TranslationsCounterJa counter = TranslationsCounterJa._(_root);
 	late final TranslationsLiquidSwipeJa liquid_swipe = TranslationsLiquidSwipeJa._(_root);
@@ -69,6 +70,19 @@ class TranslationsSelfIntroductionJa {
 	String get age_label => '年齢(int):';
 	String get height_label => '身長(double):';
 	String get working_label => '就業中(bool):';
+}
+
+// Path: refresh_indicator
+class TranslationsRefreshIndicatorJa {
+	TranslationsRefreshIndicatorJa._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'リフレッシュインジケータ';
+	String get item => 'アイテム';
+	String get update => '更新';
+	String get remove => 'を削除しました。';
 }
 
 // Path: custom
@@ -114,6 +128,10 @@ extension on Translations {
 			case 'self_introduction.age_label': return '年齢(int):';
 			case 'self_introduction.height_label': return '身長(double):';
 			case 'self_introduction.working_label': return '就業中(bool):';
+			case 'refresh_indicator.title': return 'リフレッシュインジケータ';
+			case 'refresh_indicator.item': return 'アイテム';
+			case 'refresh_indicator.update': return '更新';
+			case 'refresh_indicator.remove': return 'を削除しました。';
 			case 'custom.title': return 'カスタムScreen';
 			case 'counter.title': return 'Counter';
 			case 'counter.tap_count': return 'ボタンをタップした回数:';

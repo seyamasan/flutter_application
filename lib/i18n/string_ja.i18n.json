@@ -10,6 +10,12 @@
         "height_label": "身長(double):",
         "working_label": "就業中(bool):"
     },
+    "refresh_indicator": {
+        "title": "リフレッシュインジケータ",
+        "item": "アイテム",
+        "update": "更新",
+        "remove": "を削除しました。"
+    },
     "custom": {
         "title": "カスタムScreen"
     },

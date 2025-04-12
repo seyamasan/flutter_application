@@ -38,6 +38,7 @@ class TranslationsEn implements Translations {
 	// Translations
 	@override late final _TranslationsBasicEn basic = _TranslationsBasicEn._(_root);
 	@override late final _TranslationsSelfIntroductionEn self_introduction = _TranslationsSelfIntroductionEn._(_root);
+	@override late final _TranslationsRefreshIndicatorEn refresh_indicator = _TranslationsRefreshIndicatorEn._(_root);
 	@override late final _TranslationsCustomEn custom = _TranslationsCustomEn._(_root);
 	@override late final _TranslationsCounterEn counter = _TranslationsCounterEn._(_root);
 	@override late final _TranslationsLiquidSwipeEn liquid_swipe = _TranslationsLiquidSwipeEn._(_root);
@@ -66,6 +67,19 @@ class _TranslationsSelfIntroductionEn implements TranslationsSelfIntroductionJa 
 	@override String get age_label => 'Age(int):';
 	@override String get height_label => 'Height(double):';
 	@override String get working_label => 'Working(bool):';
+}
+
+// Path: refresh_indicator
+class _TranslationsRefreshIndicatorEn implements TranslationsRefreshIndicatorJa {
+	_TranslationsRefreshIndicatorEn._(this._root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Refresh indicator';
+	@override String get item => 'Item';
+	@override String get update => 'Update';
+	@override String get remove => 'removed.';
 }
 
 // Path: custom
@@ -111,6 +125,10 @@ extension on TranslationsEn {
 			case 'self_introduction.age_label': return 'Age(int):';
 			case 'self_introduction.height_label': return 'Height(double):';
 			case 'self_introduction.working_label': return 'Working(bool):';
+			case 'refresh_indicator.title': return 'Refresh indicator';
+			case 'refresh_indicator.item': return 'Item';
+			case 'refresh_indicator.update': return 'Update';
+			case 'refresh_indicator.remove': return 'removed.';
 			case 'custom.title': return 'Custom Screen';
 			case 'counter.title': return 'Counter';
 			case 'counter.tap_count': return 'Number of times the button was tapped:';

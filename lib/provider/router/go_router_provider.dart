@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/constant/routes.dart';
 import 'package:flutter_application/i18n/strings.g.dart';
+import 'package:flutter_application/view/basic/refresh_indicator_screen.dart';
 import 'package:flutter_application/view/basic/self_introduction_screen.dart';
 import 'package:flutter_application/view/custom/counter_screen.dart';
 import 'package:flutter_application/view/basic_screen.dart';
@@ -109,6 +110,23 @@ GoRouter goRouter(Ref ref) {
         pageBuilder: (context, state) {
           return CustomTransitionPage(
             child: const LiquidSwipeScreen(),
+            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+              return SlideTransition(
+                position: Tween<Offset>(
+                  begin: const Offset(1.0, 0.0),
+                  end: Offset.zero,
+                ).animate(animation),
+                child: child,
+              );
+            }
+          );
+        }
+      ),
+      GoRoute(
+        path: Routes.refreshIndicator,
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            child: RefreshIndicatorScreen(),
             transitionsBuilder: (context, animation, secondaryAnimation, child) {
               return SlideTransition(
                 position: Tween<Offset>(

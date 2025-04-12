@@ -5,4 +5,5 @@ class Routes {
   static const String custom = '/custom';
   static const String counter = '/counter';
   static const String liquidSwipe = '/liquidSwipe';
+  static const String refreshIndicator = '/refreshIndicator';
 }

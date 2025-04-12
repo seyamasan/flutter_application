@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/constant/routes.dart';
 import 'package:flutter_application/i18n/strings.g.dart';
+import 'package:flutter_application/model/data/screen_items.dart';
 import 'package:flutter_application/provider/router/go_router_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-class Screen {
-  final String name;
-  final String path;
-
-  Screen({required this.name, required this.path});
-}
 
 class BasicScreen extends ConsumerWidget {
   const BasicScreen({super.key});
@@ -17,8 +11,9 @@ class BasicScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final goRouter = ref.read(goRouterProvider); 
-    final List<Screen> screens = [
-      Screen(name: t.self_introduction.title, path: Routes.selfIntroduction)
+    final List<ScreenItems> screens = [
+      ScreenItems(name: t.self_introduction.title, path: Routes.selfIntroduction),
+      ScreenItems(name: t.refresh_indicator.title, path: Routes.refreshIndicator)
     ];
 
     return Padding(
