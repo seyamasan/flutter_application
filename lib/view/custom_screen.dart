@@ -13,7 +13,8 @@ class CustomScreen extends ConsumerWidget {
     final goRouter = ref.read(goRouterProvider); 
     final List<ScreenItems> screens = [
       ScreenItems(name: t.counter.title, path: Routes.counter),
-      ScreenItems(name: t.liquid_swipe.title, path: Routes.liquidSwipe)
+      ScreenItems(name: t.liquid_swipe.title, path: Routes.liquidSwipe),
+      ScreenItems(name: t.function_split.title, path: Routes.functionSplit),
     ];
 
     return Padding(

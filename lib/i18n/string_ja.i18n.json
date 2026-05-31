@@ -25,5 +25,9 @@
     },
     "liquid_swipe": {
         "title": "Liquid swipe"
+    },
+    "function_split": {
+        "title": "Function split",
+        "increment": "インクリメント"
     }
 }

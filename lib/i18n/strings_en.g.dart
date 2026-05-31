@@ -42,6 +42,7 @@ class TranslationsEn implements Translations {
 	@override late final _TranslationsCustomEn custom = _TranslationsCustomEn._(_root);
 	@override late final _TranslationsCounterEn counter = _TranslationsCounterEn._(_root);
 	@override late final _TranslationsLiquidSwipeEn liquid_swipe = _TranslationsLiquidSwipeEn._(_root);
+	@override late final _TranslationsFunctionSplitEn function_split = _TranslationsFunctionSplitEn._(_root);
 }
 
 // Path: basic
@@ -113,6 +114,17 @@ class _TranslationsLiquidSwipeEn implements TranslationsLiquidSwipeJa {
 	@override String get title => 'Liquid swipe';
 }
 
+// Path: function_split
+class _TranslationsFunctionSplitEn implements TranslationsFunctionSplitJa {
+	_TranslationsFunctionSplitEn._(this._root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Function split';
+	@override String get increment => 'Increment';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 extension on TranslationsEn {
@@ -133,6 +145,8 @@ extension on TranslationsEn {
 			case 'counter.title': return 'Counter';
 			case 'counter.tap_count': return 'Number of times the button was tapped:';
 			case 'liquid_swipe.title': return 'Liquid swipe';
+			case 'function_split.title': return 'Function split';
+			case 'function_split.increment': return 'Increment';
 			default: return null;
 		}
 	}

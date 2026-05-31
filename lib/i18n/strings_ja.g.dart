@@ -45,6 +45,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final TranslationsCustomJa custom = TranslationsCustomJa._(_root);
 	late final TranslationsCounterJa counter = TranslationsCounterJa._(_root);
 	late final TranslationsLiquidSwipeJa liquid_swipe = TranslationsLiquidSwipeJa._(_root);
+	late final TranslationsFunctionSplitJa function_split = TranslationsFunctionSplitJa._(_root);
 }
 
 // Path: basic
@@ -116,6 +117,17 @@ class TranslationsLiquidSwipeJa {
 	String get title => 'Liquid swipe';
 }
 
+// Path: function_split
+class TranslationsFunctionSplitJa {
+	TranslationsFunctionSplitJa._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Function split';
+	String get increment => 'インクリメント';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 extension on Translations {
@@ -136,6 +148,8 @@ extension on Translations {
 			case 'counter.title': return 'Counter';
 			case 'counter.tap_count': return 'ボタンをタップした回数:';
 			case 'liquid_swipe.title': return 'Liquid swipe';
+			case 'function_split.title': return 'Function split';
+			case 'function_split.increment': return 'インクリメント';
 			default: return null;
 		}
 	}

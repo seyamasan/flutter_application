@@ -6,4 +6,5 @@ class Routes {
   static const String counter = '/counter';
   static const String liquidSwipe = '/liquidSwipe';
   static const String refreshIndicator = '/refreshIndicator';
+  static const String functionSplit = '/functionSplit';
 }
