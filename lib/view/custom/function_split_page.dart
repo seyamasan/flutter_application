@@ -19,22 +19,35 @@ class _FunctionSplitPageState extends State<FunctionSplitPage> {
       appBar: AppBar(
         title: Text(t.function_split.title, style: const TextStyle(fontWeight: FontWeight.bold)),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            _buildCountText(),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  count++;
-                });
-              },
-              child: Text(t.function_split.increment),
-            ),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(16), 
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              _buildHintText(),
+              _buildCountText(),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    count++;
+                  });
+                },
+                child: Text(t.function_split.increment),
+              ),
+            ],
+          ),
         ),
       ),
+    );
+  }
+
+  Widget _buildHintText() {
+    debugPrint('FunctionSplitPageのHintTextをリビルドしたよ。');
+
+    return Text(
+      t.function_split.hint,
+      style: const TextStyle(fontSize: 24),
     );
   }
 

@@ -7,6 +7,7 @@ import 'package:flutter_application/view/custom/counter_screen.dart';
 import 'package:flutter_application/view/basic_screen.dart';
 import 'package:flutter_application/view/custom/function_split_page.dart';
 import 'package:flutter_application/view/custom/liquid_swipe/liquid_swipe_screen.dart';
+import 'package:flutter_application/view/custom/widget_split_page.dart';
 import 'package:flutter_application/view/custom_screen.dart';
 import 'package:flutter_application/widget/bottom_nav_bar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -145,6 +146,23 @@ GoRouter goRouter(Ref ref) {
         pageBuilder: (context, state) {
           return CustomTransitionPage(
             child: const FunctionSplitPage(),
+            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+              return SlideTransition(
+                position: Tween<Offset>(
+                  begin: const Offset(1.0, 0.0),
+                  end: Offset.zero,
+                ).animate(animation),
+                child: child,
+              );
+            }
+          );
+        }
+      ),
+      GoRoute(
+        path: Routes.widgetSplit,
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            child: const WidgetSplitPage(),
             transitionsBuilder: (context, animation, secondaryAnimation, child) {
               return SlideTransition(
                 position: Tween<Offset>(

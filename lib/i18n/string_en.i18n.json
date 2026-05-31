@@ -28,6 +28,12 @@
     },
     "function_split": {
         "title": "Function split",
+        "hint": "Count and check the logs!",
+        "increment": "Increment"
+    },
+    "widget_split": {
+        "title": "Widget split",
+        "hint": "Count and check the logs!",
         "increment": "Increment"
     }
 }

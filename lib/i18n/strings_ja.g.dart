@@ -46,6 +46,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final TranslationsCounterJa counter = TranslationsCounterJa._(_root);
 	late final TranslationsLiquidSwipeJa liquid_swipe = TranslationsLiquidSwipeJa._(_root);
 	late final TranslationsFunctionSplitJa function_split = TranslationsFunctionSplitJa._(_root);
+	late final TranslationsWidgetSplitJa widget_split = TranslationsWidgetSplitJa._(_root);
 }
 
 // Path: basic
@@ -125,6 +126,19 @@ class TranslationsFunctionSplitJa {
 
 	// Translations
 	String get title => 'Function split';
+	String get hint => 'カウントして、ログを確認してみてね。';
+	String get increment => 'インクリメント';
+}
+
+// Path: widget_split
+class TranslationsWidgetSplitJa {
+	TranslationsWidgetSplitJa._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Widget split';
+	String get hint => 'カウントして、ログを確認してみてね。';
 	String get increment => 'インクリメント';
 }
 
@@ -149,7 +163,11 @@ extension on Translations {
 			case 'counter.tap_count': return 'ボタンをタップした回数:';
 			case 'liquid_swipe.title': return 'Liquid swipe';
 			case 'function_split.title': return 'Function split';
+			case 'function_split.hint': return 'カウントして、ログを確認してみてね。';
 			case 'function_split.increment': return 'インクリメント';
+			case 'widget_split.title': return 'Widget split';
+			case 'widget_split.hint': return 'カウントして、ログを確認してみてね。';
+			case 'widget_split.increment': return 'インクリメント';
 			default: return null;
 		}
 	}

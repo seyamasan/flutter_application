@@ -28,6 +28,12 @@
     },
     "function_split": {
         "title": "Function split",
+        "hint": "カウントして、ログを確認してみてね。",
+        "increment": "インクリメント"
+    },
+    "widget_split": {
+        "title": "Widget split",
+        "hint": "カウントして、ログを確認してみてね。",
         "increment": "インクリメント"
     }
 }

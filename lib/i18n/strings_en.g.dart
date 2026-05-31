@@ -43,6 +43,7 @@ class TranslationsEn implements Translations {
 	@override late final _TranslationsCounterEn counter = _TranslationsCounterEn._(_root);
 	@override late final _TranslationsLiquidSwipeEn liquid_swipe = _TranslationsLiquidSwipeEn._(_root);
 	@override late final _TranslationsFunctionSplitEn function_split = _TranslationsFunctionSplitEn._(_root);
+	@override late final _TranslationsWidgetSplitEn widget_split = _TranslationsWidgetSplitEn._(_root);
 }
 
 // Path: basic
@@ -122,6 +123,19 @@ class _TranslationsFunctionSplitEn implements TranslationsFunctionSplitJa {
 
 	// Translations
 	@override String get title => 'Function split';
+	@override String get hint => 'Count and check the logs!';
+	@override String get increment => 'Increment';
+}
+
+// Path: widget_split
+class _TranslationsWidgetSplitEn implements TranslationsWidgetSplitJa {
+	_TranslationsWidgetSplitEn._(this._root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Widget split';
+	@override String get hint => 'Count and check the logs!';
 	@override String get increment => 'Increment';
 }
 
@@ -146,7 +160,11 @@ extension on TranslationsEn {
 			case 'counter.tap_count': return 'Number of times the button was tapped:';
 			case 'liquid_swipe.title': return 'Liquid swipe';
 			case 'function_split.title': return 'Function split';
+			case 'function_split.hint': return 'Count and check the logs!';
 			case 'function_split.increment': return 'Increment';
+			case 'widget_split.title': return 'Widget split';
+			case 'widget_split.hint': return 'Count and check the logs!';
+			case 'widget_split.increment': return 'Increment';
 			default: return null;
 		}
 	}

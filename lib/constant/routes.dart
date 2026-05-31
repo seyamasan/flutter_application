@@ -7,4 +7,5 @@ class Routes {
   static const String liquidSwipe = '/liquidSwipe';
   static const String refreshIndicator = '/refreshIndicator';
   static const String functionSplit = '/functionSplit';
+  static const String widgetSplit = '/widgetSplit';
 }

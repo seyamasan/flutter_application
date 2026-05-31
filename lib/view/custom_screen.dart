@@ -15,6 +15,7 @@ class CustomScreen extends ConsumerWidget {
       ScreenItems(name: t.counter.title, path: Routes.counter),
       ScreenItems(name: t.liquid_swipe.title, path: Routes.liquidSwipe),
       ScreenItems(name: t.function_split.title, path: Routes.functionSplit),
+      ScreenItems(name: t.widget_split.title, path: Routes.widgetSplit),
     ];
 
     return Padding(
